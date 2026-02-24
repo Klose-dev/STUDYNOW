@@ -1,0 +1,140 @@
+html.dark {
+	--background: #0f172a;
+	--textColor: #f8fafc;
+	--containerColor: #1e293b;
+	--foregroudColor: #020617;
+	--borderColor: rgba(255, 255, 255, 0.05);
+	--menubarIconContainerColor: rgba(255, 255, 255, 0.03);
+	--inputPlaceholderColor: #64748b;
+	--tagIconColor: rgba(255, 255, 255, 0.4);
+	--accentColor: #38bdf8;
+
+	--tableHeaderColor: rgba(255, 255, 255, 0.02);
+	--greenText: #4ade80;
+	--tagBgColor: #334155;
+}
+
+html {
+	scroll-behavior: smooth;
+	--background: #fff;
+	--textColor: #2c3e50;
+	--containerColor: #fff;
+	--foregroudColor: #f8f9fa;
+	--borderColor: rgba(0, 0, 0, 0.08);
+	--menubarIconContainerColor: #f0f4f8;
+	--inputPlaceholderColor: #95a5a6;
+	--tagIconColor: rgba(0, 0, 0, 0.3);
+	--accentColor: #1479FF;
+	
+	--tableHeaderColor: #f1f3f5;
+	--greenText: #27ae60;
+	--tagBgColor: #f8f9fa;
+}
+
+.app {
+	display: grid;
+	height: 100vh;
+	width: 100%;
+	background: var(--foregroudColor);
+	grid-template-columns: 260px auto;
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+::-webkit-scrollbar {
+	width: 0.3rem;
+	height: 0.3rem;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: #8888886f;
+	border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: #5555558e;
+}
+
+.main-container {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	padding: 2rem;
+	box-sizing: border-box;
+	gap: 20px;
+	justify-content: stretch;
+	max-height: 100vh;
+	overflow-y: auto;
+    animation: pageEnter 0.6s ease-out;
+}
+
+@keyframes pageEnter {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.page {
+	flex-grow: 1;
+	display: flex;
+	box-sizing: border-box;
+}
+
+.main-container .top-sub-container {
+	width: 100%;
+	height: 100%;
+	flex-grow: 1;
+	box-sizing: border-box;
+	scrollbar-width: none;
+	-ms-overflow-style: none;
+}
+
+.table td:not(:last-child) {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.col-2 {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+}
+
+
+.hoverBgEffect:hover {
+    background: var(--borderColor);
+}
+
+
+@media (max-width: 768px) {
+	.col-md-1 {
+		display: grid;
+		grid-template-columns: 1fr;
+	}
+}
+
+@media (max-width: 850px) {
+	:root {
+		font-size: 15px;
+	}
+
+	.hide-able {
+		display: none;
+	}
+}
+
+@media (max-width: 800px) {
+	.app {
+		grid-template-columns: 0px auto;
+	}
+
+	.main-container {
+		width: 100vw;
+	}
+}

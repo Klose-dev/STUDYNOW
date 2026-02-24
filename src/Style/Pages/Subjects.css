@@ -1,0 +1,9 @@
+.subjects .top-sub-container {
+    display: grid;
+    grid-template-columns: 63% auto;
+    gap: 10px;
+}
+
+.subjects .save-btn-container button {
+    margin-top: 20px;
+}
